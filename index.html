@@ -1,1 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Jay | AI Content & Social Media Professional</title>
+
+  <meta
+    name="description"
+    content="Jay's portfolio — AI content creation, social media management, AI video, prompt engineering, SEO content and creative technology."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #101010;
+      --card: #181818;
+      --card-hover: #202020;
+      --text: #f5f5f0;
+      --muted: #a5a5a0;
+      --line: #30302d;
+      --accent: #d9ff35;
+      --accent-dark: #101010;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,16,16,.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-button {
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-button:hover {
+      background: var(--accent);
+      color: var(--accent-dark);
+      border-color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(217,255,53,.12),
+          transparent 35%
+        );
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+      margin-top: 25px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 8vw, 105px);
+      line-height: .95;
+      font-weight: 500;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      padding: 14px 24px;
+      border-radius: 40px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: var(--accent-dark);
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-number {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 850px;
+      margin-top: 15px;
+      margin-bottom: 55px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(43px, 6vw, 70px);
+      line-height: 1.05;
+      font-weight: 500;
+    }
+
+    .section-title em {
+      color: var(--accent);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .body-text {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    /* SKILLS */
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .skill {
+      padding: 30px;
+      background: var(--bg);
+      min-height: 190px;
+    }
+
+    .skill:hover {
+      background: var(--card-hover);
+    }
+
+    .skill-number {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .skill h3 {
+      margin: 15px 0 8px;
+      font-size: 18px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* TOOLS */
+
+    .sub-heading {
+      margin-top: 70px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .tool {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .tool strong {
+      font-size: 14px;
+    }
+
+    .tool span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(217,255,53,.4);
+    }
+
+    .project-visual {
+      height: 250px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(217,255,53,.18),
+          transparent 35%
+        ),
+        linear-gradient(135deg,#292924,#151515);
+    }
+
+    .project-label {
+      background: rgba(0,0,0,.55);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .project-content {
+      padding: 27px;
+    }
+
+    .project-category {
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .project h3 {
+      margin-top: 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .project p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* WORKFLOW */
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .workflow-step {
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+    }
+
+    .workflow-step h3 {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    .workflow-step p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      position: relative;
+      border-left: 1px solid var(--line);
+      padding-left: 35px;
+    }
+
+    .experience-dot {
+      position: absolute;
+      left: -6px;
+      top: 8px;
+      width: 11px;
+      height: 11px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    .experience h3 {
+      margin-top: 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      font-weight: 500;
+    }
+
+    .experience-role {
+      margin-top: 5px;
+      font-weight: 600;
+    }
+
+    .experience-list {
+      margin-top: 25px;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    /* EDUCATION */
+
+    .education-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 18px;
+      max-width: 600px;
+    }
+
+    .education-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 17px;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #222220;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .submit-button {
+      padding: 13px 24px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--accent);
+      color: #101010;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 0;
+      }
+
+      .two-column,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tools {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 550px) {
+
+      .container {
+        width: min(100% - 30px, var(--max));
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#top" class="logo">Jay<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="#contact" class="nav-button">Let's Talk</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="top">
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+
+      <div class="eyebrow">
+        ● AI Content · Social Media · Creative Technology
+      </div>
+
+      <h1>
+        Jay — <em>AI Content</em><br>
+        & Social Media Professional
+      </h1>
+
+      <p class="hero-description">
+        I turn ideas into social-ready content by combining AI video,
+        image generation, prompt engineering, social media strategy,
+        content planning and creative storytelling.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#work" class="button primary">
+          View My Work →
+        </a>
+
+        <a href="#contact" class="button">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-number">
+        01 — About
+      </div>
+
+      <h2 class="section-title">
+        Ideas in. <em>Social-ready</em> content out.
+      </h2>
+
+      <div class="two-column">
+
+        <p class="body-text">
+          I am an AI Content and Social Media professional with hands-on
+          experience in content planning, social media publishing,
+          AI-generated videos, creative development and client coordination.
+        </p>
+
+        <p class="body-text">
+          My work combines creative thinking with AI tools to turn a
+          brief, trend or simple idea into content that can actually
+          be published — from script and visuals to editing, publishing
+          and reporting.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-number">
+        02 — Capabilities
+      </div>
+
+      <h2 class="section-title">
+        What I bring to a <em>content team</em>
+      </h2>
+
+      <div class="skill-grid">
+
+        <div class="skill">
+          <span class="skill-number">01</span>
+          <h3>AI Video Creation</h3>
+          <p>
+            AI-generated short videos, characters, scenes and
+            story-led social content.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">02</span>
+          <h3>AI Image Generation</h3>
+          <p>
+            Campaign visuals, social creatives and concept images
+            created with structured prompts.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">03</span>
+          <h3>Prompt Engineering</h3>
+          <p>
+            Detailed prompts for consistent characters, scenes,
+            visuals, motion and storytelling.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">04</span>
+          <h3>Social Media Management</h3>
+          <p>
+            Content planning, publishing and day-to-day social
+            media management for clients.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">05</span>
+          <h3>Content Planning</h3>
+          <p>
+            Social calendars, content pillars, campaign ideas,
+            captions and creative concepts.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">06</span>
+          <h3>Reels & Short-form Video</h3>
+          <p>
+            Short-form content designed around hooks, storytelling
+            and platform-friendly formats.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">07</span>
+          <h3>SEO Content</h3>
+          <p>
+            Blog content, SEO-focused writing and website uploads
+            using WordPress and cPanel.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">08</span>
+          <h3>Analytics & Reporting</h3>
+          <p>
+            Monthly social media and website performance reporting
+            with clear insights.
+          </p>
+        </div>
+
+        <div class="skill">
+          <span class="skill-number">09</span>
+          <h3>Client Coordination</h3>
+          <p>
+            Managing briefs, feedback, approvals, content delivery
+            and publishing workflows.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="sub-heading">
+        Tools I use
+      </div>
+
+      <div class="tools">
+
+        <div class="tool">
+          <strong>ChatGPT</strong>
+          <span>Ideation · Scripts · Prompts</span>
+        </div>
+
+        <div class="tool">
+          <strong>Claude</strong>
+          <span>Writing · Content</span>
+        </div>
+
+        <div class="tool">
+          <strong>Flow AI</strong>
+          <span>AI Video · Motion</span>
+        </div>
+
+        <div class="tool">
+          <strong>Freepik</strong>
+          <span>AI Images · Assets</span>
+        </div>
+
+        <div class="tool">
+          <strong>ElevenLabs</strong>
+          <span>AI Voiceover</span>
+        </div>
+
+        <div class="tool">
+          <strong>Meta Business Suite</strong>
+          <span>Publishing · Insights</span>
+        </div>
+
+        <div class="tool">
+          <strong>WordPress / cPanel</strong>
+          <span>Website · Blog Uploads</span>
+        </div>
+
+        <div class="tool">
+          <strong>Google Analytics</strong>
+          <span>Website Analytics</span>
+        </div>
+
+        <div class="tool">
+          <strong>Canva</strong>
+          <span>Social Creatives</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WORK -->
+
+  <section id="work">
+    <div class="container">
+
+      <div class="section-number">
+        03 — Selected Work
+      </div>
+
+      <h2 class="section-title">
+        Projects across <em>AI video, social and SEO</em>
+      </h2>
+
+      <div class="projects">
+
+
+        <article class="project">
+
+          <div class="project-visual">
+            <span class="project-label">
+              AI Video · Festive Campaign
+            </span>
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-category">
+              AI Video
+            </div>
+
+            <h3>AI Diwali Comedy Series</h3>
+
+            <p>
+              A Hindi comedy reel series built around recurring
+              AI characters, family situations, festive humour
+              and short-form storytelling.
+            </p>
+
+            <div class="chips">
+              <span class="chip">AI Characters</span>
+              <span class="chip">Scripts</span>
+              <span class="chip">AI Video</span>
+              <span class="chip">Voiceover</span>
+              <span class="chip">Reels</span>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="project">
+
+          <div class="project-visual">
+            <span class="project-label">
+              AI Video · Concept
+            </span>
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-category">
+              AI Content
+            </div>
+
+            <h3>AI Podcast Concept</h3>
+
+            <p>
+              A concept exploring how AI can create an entire
+              podcast experience using AI hosts, visuals,
+              storytelling and generated voice.
+            </p>
+
+            <div class="chips">
+              <span class="chip">AI Host</span>
+              <span class="chip">Storytelling</span>
+              <span class="chip">Visua
