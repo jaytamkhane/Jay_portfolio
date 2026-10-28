@@ -43,7 +43,6 @@
 
     .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
-    /* Header */
     header {
       position: sticky;
       top: 0;
@@ -69,7 +68,6 @@
     }
     .nav-cta:hover { transform: translateY(-2px); background: var(--blue); }
 
-    /* Hero */
     .hero {
       position: relative;
       padding: 104px 0 96px;
@@ -155,14 +153,12 @@
     }
     .hero-note strong { display: block; color: var(--ink); margin-bottom: 8px; font-size: 14px; }
 
-    /* Shared sections */
     section { padding: 100px 0; border-bottom: 1px solid var(--line); }
     .section-head { display: grid; grid-template-columns: 160px 1fr; gap: 30px; margin-bottom: 54px; }
     .section-index { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding-top: 9px; }
     .section-title { max-width: 800px; font-family: Manrope, sans-serif; font-size: clamp(38px, 5vw, 62px); line-height: 1.04; letter-spacing: -.055em; font-weight: 700; }
     .section-intro { max-width: 650px; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.8; }
 
-    /* About */
     #about { background: #fffdf9; }
     .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 90px; }
     .about-copy p { color: #48434b; font-size: 18px; line-height: 1.9; }
@@ -176,7 +172,6 @@
     .fact:nth-child(3) dd { color: #158f6c; }
     .fact:nth-child(4) dd { color: #df554b; }
 
-    /* Capabilities */
     #capabilities { background: #f8f4ff; }
     .capabilities { border-top: 1px solid #ded4f4; }
     .capability {
@@ -193,7 +188,6 @@
     .capability h3 { font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.03em; }
     .capability p { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 500px; }
 
-    /* Work */
     #work { background: #fffaf5; }
     .work-list { border-top: 1px solid var(--line); }
     .work-item {
@@ -219,16 +213,56 @@
     .work-desc { color: var(--muted); font-size: 14px; line-height: 1.75; }
     .work-meta { margin-top: 14px; color: #4f4a52; font-size: 12px; }
 
-    /* Toolkit */
-    .tools { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .tool { min-height: 110px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; transition: transform .2s ease, background .2s ease; }
-    .tool:hover { transform: translateY(-4px); background: #fff3d2; }
+    /* Toolkit: real brand logos + clean colorful cards */
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .tool {
+      min-height: 150px;
+      padding: 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .tool:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(23,21,26,.08);
+      background: #fff;
+    }
     .tool:nth-child(2n) { background: #f2efff; }
     .tool:nth-child(3n) { background: #edfbf5; }
+    .tool-top { display: flex; align-items: center; gap: 12px; }
+    .tool-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 38px;
+      background: #fff;
+      border: 1px solid rgba(23,21,26,.08);
+      box-shadow: 0 3px 10px rgba(23,21,26,.06);
+      overflow: hidden;
+    }
+    .tool-logo img { width: 23px; height: 23px; display: block; }
+    .tool-logo.flow-mark {
+      color: white;
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      background: linear-gradient(135deg, #3158ff 0%, #7a45f5 52%, #ff6b5f 100%);
+    }
     .tool strong { display: block; font-family: Manrope, sans-serif; font-size: 14px; }
-    .tool span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+    .tool span { display: block; margin-top: 14px; color: var(--muted); font-size: 11px; }
+    .tool small { display: block; margin-top: 4px; color: #8a838d; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
 
-    /* Process */
     #process { background: #17151a; color: white; }
     #process .section-index { color: #aaa4b0; }
     #process .section-title { color: white; }
@@ -239,7 +273,6 @@
     .process-step h3 { margin-top: 35px; font-family: Manrope, sans-serif; font-size: 16px; }
     .process-step p { margin-top: 8px; color: #aaa4b0; font-size: 12px; line-height: 1.65; }
 
-    /* Experience */
     #experience { background: #fffdf9; }
     .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
     .timeline-item { padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: white; box-shadow: 9px 9px 0 var(--coral); }
@@ -252,7 +285,6 @@
     .education h3 { margin-top: 8px; font-family: Manrope, sans-serif; font-size: 24px; }
     .education p { color: var(--muted); font-size: 13px; margin-top: 5px; }
 
-    /* Contact */
     .contact { padding-bottom: 110px; background: linear-gradient(135deg, #eef2ff 0%, #fff3dc 52%, #fff0f4 100%); }
     .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: end; }
     .contact-title { max-width: 760px; font-family: Manrope, sans-serif; font-size: clamp(44px, 6vw, 78px); line-height: .98; letter-spacing: -.06em; }
@@ -285,7 +317,9 @@
       .capability { grid-template-columns: 45px 1fr; }
       .capability p { grid-column: 2; }
       .tools, .process { grid-template-columns: 1fr 1fr; }
-      .tool { min-height: 95px; padding: 17px; }
+      .tool { min-height: 135px; padding: 17px; }
+      .tool-logo { width: 34px; height: 34px; flex-basis: 34px; }
+      .tool-logo img { width: 20px; height: 20px; }
       .process-step { min-height: 165px; }
       .work-item { grid-template-columns: 42px 1fr; gap: 18px; padding: 26px 14px; }
       .work-desc { grid-column: 2; }
@@ -431,16 +465,46 @@
           <div><h2 class="section-title">Tools I use to get the work out</h2></div>
         </div>
         <div class="tools">
-          <div class="tool"><strong>ChatGPT</strong><span>Prompts · Scripts · Content</span></div>
-          <div class="tool"><strong>Claude</strong><span>Writing · Analysis</span></div>
-          <div class="tool"><strong>Flow</strong><span>AI Video · Storyboards</span></div>
-          <div class="tool"><strong>Freepik</strong><span>AI Visuals · Creative Assets</span></div>
-          <div class="tool"><strong>ElevenLabs</strong><span>AI Voiceover</span></div>
-          <div class="tool"><strong>Meta Business Suite</strong><span>Publishing · Management</span></div>
-          <div class="tool"><strong>Google Analytics</strong><span>Website Reporting</span></div>
-          <div class="tool"><strong>WordPress</strong><span>Website Publishing</span></div>
-          <div class="tool"><strong>cPanel</strong><span>Web Content Uploads</span></div>
-          <div class="tool"><strong>Canva</strong><span>Social Creatives</span></div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/openai/17151a" alt="OpenAI logo"></div><strong>ChatGPT</strong></div>
+            <span>Prompts · Scripts · Content</span><small>AI assistant</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/claude/7a45f5" alt="Claude logo"></div><strong>Claude</strong></div>
+            <span>Writing · Analysis</span><small>AI assistant</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo flow-mark">F</div><strong>Flow</strong></div>
+            <span>AI Video · Storyboards</span><small>AI video</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/freepik/ff6b5f" alt="Freepik logo"></div><strong>Freepik</strong></div>
+            <span>AI Visuals · Creative Assets</span><small>Creative platform</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/elevenlabs/17151a" alt="ElevenLabs logo"></div><strong>ElevenLabs</strong></div>
+            <span>AI Voiceover</span><small>AI voice</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/meta/3158ff" alt="Meta logo"></div><strong>Meta Business Suite</strong></div>
+            <span>Publishing · Management</span><small>Social publishing</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/googleanalytics/3158ff" alt="Google Analytics logo"></div><strong>Google Analytics</strong></div>
+            <span>Website Reporting</span><small>Analytics</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/wordpress/3158ff" alt="WordPress logo"></div><strong>WordPress</strong></div>
+            <span>Website Publishing</span><small>CMS</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><span style="font-weight:800;color:#3158ff;font-size:17px;">cP</span></div><strong>cPanel</strong></div>
+            <span>Web Content Uploads</span><small>Web hosting</small>
+          </div>
+          <div class="tool">
+            <div class="tool-top"><div class="tool-logo"><img src="https://cdn.simpleicons.org/canva/3158ff" alt="Canva logo"></div><strong>Canva</strong></div>
+            <span>Social Creatives</span><small>Design</small>
+          </div>
         </div>
       </div>
     </section>
