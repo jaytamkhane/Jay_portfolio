@@ -3,908 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jay | AI Content & Social Media Professional</title>
-  <meta name="description" content="Jay's portfolio — AI content creation, social media management, AI video, prompt engineering, SEO content and creative technology.">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>Jay Tamkhane — AI Content & Social Media</title>
+  <meta name="description" content="Jay Tamkhane — AI content creation, social media, prompt engineering, SEO content and creative technology.">
   <meta name="author" content="Jay Tamkhane">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #101010;
-      --card: #181818;
-      --card-hover: #202020;
-      --text: #f5f5f0;
-      --muted: #a5a5a0;
-      --line: #30302d;
-      --accent: #d9ff35;
-      --accent-dark: #101010;
-      --max: 1180px;
+      --paper: #f7f7f5;
+      --ink: #171717;
+      --muted: #666864;
+      --line: #d9dad5;
+      --soft: #ecece8;
+      --accent: #2457d6;
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "DM Sans", Arial, sans-serif;
-      line-height: 1.6;
-    }
-
+    body { background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
 
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: auto;
-    }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
+    /* Header */
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(16,16,16,.88);
-      backdrop-filter: blur(15px);
+      z-index: 50;
+      background: rgba(247,247,245,.94);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
-    nav {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    nav { height: 74px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: Manrope, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -.04em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 30px; align-items: center; font-size: 13px; color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
 
-    .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 30px;
-      font-weight: 600;
-    }
-
-    .logo span, .hero h1 em, .section-title em {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-button {
-      padding: 10px 18px;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .nav-button:hover {
-      background: var(--accent);
-      color: var(--accent-dark);
-      border-color: var(--accent);
-    }
-
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      background: radial-gradient(circle at 80% 15%, rgba(217,255,53,.12), transparent 35%);
-    }
-
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      max-width: 1000px;
-      margin-top: 25px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(55px, 8vw, 105px);
-      line-height: .95;
-      font-weight: 500;
-    }
-
-    .hero-description {
-      max-width: 650px;
-      margin-top: 35px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      margin-top: 35px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      padding: 14px 24px;
-      border-radius: 40px;
-      border: 1px solid var(--line);
-      font-size: 14px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: var(--accent-dark);
-      border-color: var(--accent);
-    }
-
+    /* Hero */
+    .hero { padding: 112px 0 96px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); gap: 70px; align-items: end; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+    h1 { margin-top: 18px; max-width: 820px; font-family: Manrope, sans-serif; font-size: clamp(54px, 8vw, 96px); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
+    .hero-copy { max-width: 610px; margin-top: 28px; font-size: 18px; color: var(--muted); line-height: 1.75; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border: 1px solid var(--ink); font-size: 13px; font-weight: 700; transition: .2s ease; }
     .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .hero-note { border-left: 1px solid var(--ink); padding-left: 24px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .hero-note strong { display: block; color: var(--ink); margin-bottom: 8px; font-size: 14px; }
 
-    section {
-      padding: 100px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    /* Shared sections */
+    section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 160px 1fr; gap: 30px; margin-bottom: 54px; }
+    .section-index { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding-top: 9px; }
+    .section-title { max-width: 760px; font-family: Manrope, sans-serif; font-size: clamp(38px, 5vw, 62px); line-height: 1.04; letter-spacing: -.055em; font-weight: 700; }
+    .section-intro { max-width: 650px; margin-top: 18px; color: var(--muted); font-size: 16px; line-height: 1.8; }
 
-    .section-number {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 90px; }
+    .about-copy p { color: #484a46; font-size: 18px; line-height: 1.9; }
+    .about-copy p + p { margin-top: 22px; }
+    .facts { border-top: 1px solid var(--line); }
+    .fact { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .fact dt { color: var(--muted); }
+    .fact dd { font-weight: 600; }
 
-    .section-title {
-      max-width: 850px;
-      margin-top: 15px;
-      margin-bottom: 55px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(43px, 6vw, 70px);
-      line-height: 1.05;
-      font-weight: 500;
-    }
+    /* Capabilities */
+    .capabilities { border-top: 1px solid var(--line); }
+    .capability { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .capability-no { color: var(--muted); font-size: 12px; }
+    .capability h3 { font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.03em; }
+    .capability p { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 500px; }
 
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
+    /* Work */
+    .work-list { border-top: 1px solid var(--line); }
+    .work-item { display: grid; grid-template-columns: 110px minmax(0, 1fr) 260px; gap: 34px; padding: 34px 0; border-bottom: 1px solid var(--line); align-items: start; transition: padding .2s ease; }
+    .work-item:hover { padding-left: 12px; }
+    .work-number { color: var(--muted); font-size: 12px; }
+    .work-title { font-family: Manrope, sans-serif; font-size: clamp(25px, 3vw, 34px); line-height: 1.1; letter-spacing: -.04em; }
+    .work-type { margin-top: 9px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .work-desc { color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .work-meta { margin-top: 14px; color: #4f514d; font-size: 12px; }
 
-    .body-text {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.9;
-    }
+    /* Tools */
+    .tools { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .tool { min-height: 110px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .tool strong { display: block; font-family: Manrope, sans-serif; font-size: 14px; }
+    .tool span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
 
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      overflow: hidden;
-    }
+    /* Process */
+    .process { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .process-step { min-height: 190px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .process-step .num { font-size: 11px; color: var(--accent); font-weight: 700; }
+    .process-step h3 { margin-top: 35px; font-family: Manrope, sans-serif; font-size: 16px; }
+    .process-step p { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.65; }
 
-    .skill {
-      padding: 30px;
-      background: var(--bg);
-      min-height: 190px;
-    }
+    /* Experience */
+    .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .timeline-item { padding-left: 25px; border-left: 2px solid var(--ink); }
+    .timeline-date { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .timeline-item h3 { margin-top: 9px; font-family: Manrope, sans-serif; font-size: 30px; letter-spacing: -.04em; }
+    .timeline-role { margin-top: 4px; font-size: 14px; font-weight: 700; }
+    .timeline-list { margin-top: 20px; padding-left: 18px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+    .education { border-top: 1px solid var(--line); margin-top: 34px; padding-top: 26px; }
+    .education-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
+    .education h3 { margin-top: 8px; font-family: Manrope, sans-serif; font-size: 24px; }
+    .education p { color: var(--muted); font-size: 13px; margin-top: 5px; }
 
-    .skill:hover { background: var(--card-hover); }
+    /* Contact */
+    .contact { padding-bottom: 110px; }
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: end; }
+    .contact-title { max-width: 760px; font-family: Manrope, sans-serif; font-size: clamp(44px, 6vw, 78px); line-height: .98; letter-spacing: -.06em; }
+    .contact-copy { margin-top: 24px; color: var(--muted); max-width: 560px; font-size: 16px; line-height: 1.8; }
+    .contact-side { border-top: 1px solid var(--line); }
+    .contact-row { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .contact-row span { color: var(--muted); }
+    .contact-row a { font-weight: 700; }
+    .contact-row a:hover { color: var(--accent); }
 
-    .skill-number {
-      color: var(--muted);
-      font-size: 11px;
-    }
+    footer { padding: 28px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
 
-    .skill h3 { margin: 15px 0 8px; font-size: 18px; }
-
-    .skill p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .sub-heading {
-      margin-top: 70px;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .tool {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 18px;
-      transition: .2s;
-    }
-
-    .tool:hover {
-      transform: translateY(-3px);
-      border-color: rgba(217,255,53,.35);
-    }
-
-    .tool strong { font-size: 14px; }
-
-    .tool span {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .project {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: .25s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: rgba(217,255,53,.4);
-    }
-
-    .project-visual {
-      height: 250px;
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(217,255,53,.18), transparent 35%),
-        linear-gradient(135deg,#292924,#151515);
-    }
-
-    .project-label {
-      background: rgba(0,0,0,.55);
-      border: 1px solid var(--line);
-      padding: 7px 12px;
-      border-radius: 30px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .project-content { padding: 27px; }
-
-    .project-category {
-      color: var(--accent);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-    }
-
-    .project h3 {
-      margin-top: 8px;
-      font-family: "Playfair Display", serif;
-      font-size: 32px;
-      font-weight: 500;
-    }
-
-    .project p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
-    }
-
-    .chip {
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 10px;
-    }
-
-    .workflow-step {
-      padding: 18px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 15px;
-    }
-
-    .step-number {
-      width: 32px;
-      height: 32px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-    }
-
-    .workflow-step h3 { margin-top: 14px; font-size: 14px; }
-
-    .workflow-step p {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .experience {
-      position: relative;
-      border-left: 1px solid var(--line);
-      padding-left: 35px;
-    }
-
-    .experience-dot {
-      position: absolute;
-      left: -6px;
-      top: 8px;
-      width: 11px;
-      height: 11px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .experience-date {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-    }
-
-    .experience h3 {
-      margin-top: 10px;
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-      font-weight: 500;
-    }
-
-    .experience-role {
-      margin-top: 5px;
-      font-weight: 600;
-    }
-
-    .experience-list {
-      margin-top: 25px;
-      padding-left: 20px;
-      color: var(--muted);
-      line-height: 2;
-    }
-
-    .education-card {
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 18px;
-      max-width: 600px;
-    }
-
-    .education-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 32px;
-      font-weight: 500;
-    }
-
-    .education-card p {
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 60px;
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: 17px;
-    }
-
-    .contact-link:hover { color: var(--accent); }
-
-    .contact-form {
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 18px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .form-group { margin-bottom: 17px; }
-
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      margin-bottom: 7px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: #222220;
-      color: var(--text);
-      font: inherit;
-      outline: none;
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    input:focus, textarea:focus { border-color: var(--accent); }
-
-    .submit-button {
-      padding: 13px 24px;
-      border: 0;
-      border-radius: 30px;
-      background: var(--accent);
-      color: #101010;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    footer { padding: 35px 0; }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 22px;
-    }
-
-    .footer-links a:hover { color: var(--text); }
-
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .nav-links { display: none; }
-      .hero { min-height: auto; padding: 100px 0; }
-      .two-column, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .skill-grid { grid-template-columns: 1fr 1fr; }
-      .tools { grid-template-columns: 1fr 1fr; }
-      .projects { grid-template-columns: 1fr; }
-      .workflow { grid-template-columns: 1fr 1fr; }
+      .hero-grid, .about-grid, .experience-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-note { max-width: 420px; }
+      .section-head { grid-template-columns: 100px 1fr; }
+      .tools { grid-template-columns: repeat(3, 1fr); }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .work-item { grid-template-columns: 70px 1fr; }
+      .work-desc { grid-column: 2; }
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 600px) {
       .container { width: min(100% - 30px, var(--max)); }
-      section { padding: 70px 0; }
-      .hero h1 { font-size: 52px; }
-      .hero-description { font-size: 16px; }
-      .skill-grid, .tools, .workflow, .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 80px 0 70px; }
+      section { padding: 72px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 38px; }
+      .capability { grid-template-columns: 45px 1fr; }
+      .capability p { grid-column: 2; }
+      .tools, .process { grid-template-columns: 1fr 1fr; }
+      .tool { min-height: 95px; padding: 17px; }
+      .process-step { min-height: 165px; }
+      .work-item { grid-template-columns: 42px 1fr; gap: 18px; }
+      .work-desc { grid-column: 2; }
       .footer-inner { flex-direction: column; }
+      h1 { font-size: 52px; }
+    }
+
+    @media (max-width: 420px) {
+      .tools, .process { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="container">
-    <nav>
-      <a href="#top" class="logo">Jay<span>.</span></a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <a href="#contact" class="nav-button">Let's Talk</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-
-  <section class="hero">
+  <header>
     <div class="container">
-      <div class="eyebrow">● AI Content · Social Media · Creative Technology</div>
-
-      <h1>
-        Jay — <em>AI Content</em><br>
-        & Social Media Professional
-      </h1>
-
-      <p class="hero-description">
-        I turn ideas into social-ready content by combining AI video,
-        image generation, prompt engineering, social media strategy,
-        content planning and creative storytelling.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#work" class="button primary">View My Work →</a>
-        <a href="#contact" class="button">Contact Me</a>
-      </div>
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top">Jay<span>.</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+        </div>
+        <a class="nav-cta" href="#contact">Get in touch</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-number">01 — About</div>
-
-      <h2 class="section-title">
-        Ideas in. <em>Social-ready</em> content out.
-      </h2>
-
-      <div class="two-column">
-        <p class="body-text">
-          I am an AI Content and Social Media professional with hands-on
-          experience in content planning, social media publishing,
-          AI-generated videos, creative development and client coordination.
-        </p>
-
-        <p class="body-text">
-          My work combines creative thinking with AI tools to turn a
-          brief, trend or simple idea into content that can actually
-          be published — from script and visuals to publishing and reporting.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="section-number">02 — Capabilities</div>
-
-      <h2 class="section-title">
-        What I bring to a <em>content team</em>
-      </h2>
-
-      <div class="skill-grid">
-        <div class="skill"><span class="skill-number">01</span><h3>AI Video Creation</h3><p>AI-generated short videos, characters, scenes and story-led social content.</p></div>
-        <div class="skill"><span class="skill-number">02</span><h3>AI Image Generation</h3><p>Campaign visuals, social creatives and concept images created with structured prompts.</p></div>
-        <div class="skill"><span class="skill-number">03</span><h3>Prompt Engineering</h3><p>Detailed prompts for consistent characters, scenes, visuals, motion and storytelling.</p></div>
-        <div class="skill"><span class="skill-number">04</span><h3>Social Media Management</h3><p>Content planning, publishing and day-to-day social media management for clients.</p></div>
-        <div class="skill"><span class="skill-number">05</span><h3>Content Planning</h3><p>Social calendars, content pillars, campaign ideas, captions and creative concepts.</p></div>
-        <div class="skill"><span class="skill-number">06</span><h3>Reels & Short-form Video</h3><p>Short-form content designed around hooks, storytelling and platform-friendly formats.</p></div>
-        <div class="skill"><span class="skill-number">07</span><h3>SEO Content</h3><p>Blog content, SEO-focused writing and website uploads using WordPress and cPanel.</p></div>
-        <div class="skill"><span class="skill-number">08</span><h3>Analytics & Reporting</h3><p>Monthly social media and website performance reporting with clear insights.</p></div>
-        <div class="skill"><span class="skill-number">09</span><h3>Client Coordination</h3><p>Managing briefs, feedback, approvals, content delivery and publishing workflows.</p></div>
-      </div>
-
-      <div class="sub-heading">Tools I use</div>
-
-      <div class="tools">
-        <div class="tool"><strong>ChatGPT</strong><span>Ideation · Scripts · Prompts</span></div>
-        <div class="tool"><strong>Claude</strong><span>Writing · Content</span></div>
-        <div class="tool"><strong>Flow AI</strong><span>AI Video · Motion</span></div>
-        <div class="tool"><strong>Freepik</strong><span>AI Images · Assets</span></div>
-        <div class="tool"><strong>ElevenLabs</strong><span>AI Voiceover</span></div>
-        <div class="tool"><strong>Meta Business Suite</strong><span>Publishing · Insights</span></div>
-        <div class="tool"><strong>WordPress / cPanel</strong><span>Website · Blog Uploads</span></div>
-        <div class="tool"><strong>Google Analytics</strong><span>Website Analytics</span></div>
-        <div class="tool"><strong>Canva</strong><span>Social Creatives</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="container">
-      <div class="section-number">03 — Selected Work</div>
-
-      <h2 class="section-title">
-        Projects across <em>AI video, social and SEO</em>
-      </h2>
-
-      <div class="projects">
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">AI Video · Festive Campaign</span></div>
-          <div class="project-content">
-            <div class="project-category">AI Video</div>
-            <h3>AI Diwali Comedy Series</h3>
-            <p>
-              A Hindi comedy reel series built around recurring AI characters,
-              family situations, festive humour and short-form storytelling.
-            </p>
-            <div class="chips">
-              <span class="chip">AI Characters</span>
-              <span class="chip">Scripts</span>
-              <span class="chip">AI Video</span>
-              <span class="chip">Voiceover</span>
-              <span class="chip">Reels</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">AI Video · Concept</span></div>
-          <div class="project-content">
-            <div class="project-category">AI Content</div>
-            <h3>AI Podcast Concept</h3>
-            <p>
-              A concept exploring how AI can create an entire podcast experience
-              using AI hosts, visuals, storytelling and generated voice.
-            </p>
-            <div class="chips">
-              <span class="chip">AI Host</span>
-              <span class="chip">Storytelling</span>
-              <span class="chip">Visuals</span>
-              <span class="chip">Voice</span>
-              <span class="chip">Concept</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">AI Video · Mythology</span></div>
-          <div class="project-content">
-            <div class="project-category">AI Storytelling</div>
-            <h3>Ramayana Cinematic Reel</h3>
-            <p>
-              A cinematic AI video concept featuring consistent characters,
-              dramatic composition, scene direction and story-driven motion.
-            </p>
-            <div class="chips">
-              <span class="chip">Character Consistency</span>
-              <span class="chip">Image Prompts</span>
-              <span class="chip">Motion Prompts</span>
-              <span class="chip">Cinematic</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">Social Media · Healthcare</span></div>
-          <div class="project-content">
-            <div class="project-category">Social Media</div>
-            <h3>Healthcare Content Planning</h3>
-            <p>
-              Social media planning for healthcare content covering educational
-              posts, rehabilitation tips, awareness reels, technology and engagement.
-            </p>
-            <div class="chips">
-              <span class="chip">Content Calendar</span>
-              <span class="chip">Reels</span>
-              <span class="chip">Educational</span>
-              <span class="chip">Social Strategy</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">SEO · Website Content</span></div>
-          <div class="project-content">
-            <div class="project-category">SEO Content</div>
-            <h3>SEO Blog Workflow</h3>
-            <p>
-              SEO-focused blog creation using AI-assisted research and writing,
-              followed by website publishing through WordPress, cPanel and HTML.
-            </p>
-            <div class="chips">
-              <span class="chip">SEO Writing</span>
-              <span class="chip">AI-Assisted Content</span>
-              <span class="chip">WordPress</span>
-              <span class="chip">cPanel</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-visual"><span class="project-label">Analytics · Reporting</span></div>
-          <div class="project-content">
-            <div class="project-category">Reporting</div>
-            <h3>Social Media Analytics Reports</h3>
-            <p>
-              Monthly performance reporting across social platforms and website
-              analytics, turning platform data into clear client-ready reports.
-            </p>
-            <div class="chips">
-              <span class="chip">Instagram</span>
-              <span class="chip">Facebook</span>
-              <span class="chip">LinkedIn</span>
-              <span class="chip">YouTube</span>
-              <span class="chip">Google Analytics</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="process">
-    <div class="container">
-      <div class="section-number">04 — Process</div>
-
-      <h2 class="section-title">
-        From <em>brief</em> to publish-ready content.
-      </h2>
-
-      <div class="workflow">
-        <div class="workflow-step"><div class="step-number">01</div><h3>Brief</h3><p>Understand the goal, audience and platform.</p></div>
-        <div class="workflow-step"><div class="step-number">02</div><h3>Idea</h3><p>Develop the concept, hook and content direction.</p></div>
-        <div class="workflow-step"><div class="step-number">03</div><h3>Script</h3><p>Build the story, dialogue or educational structure.</p></div>
-        <div class="workflow-step"><div class="step-number">04</div><h3>Prompts</h3><p>Create detailed image and motion prompts.</p></div>
-        <div class="workflow-step"><div class="step-number">05</div><h3>Generate</h3><p>Create visuals, video and AI voiceover.</p></div>
-        <div class="workflow-step"><div class="step-number">06</div><h3>Publish</h3><p>Prepare and publish content for social platforms.</p></div>
-        <div class="workflow-step"><div class="step-number">07</div><h3>Report</h3><p>Review performance and identify insights.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-number">05 — Experience</div>
-
-      <h2 class="section-title">
-        Hands-on <em>creative experience.</em>
-      </h2>
-
-      <div class="experience">
-        <div class="experience-dot"></div>
-        <div class="experience-date">2026 — Present</div>
-        <h3>The Mark</h3>
-        <div class="experience-role">AI Prompt Engineer · Social Media & AI Content</div>
-
-        <ul class="experience-list">
-          <li>Create AI image and video prompts for social media content.</li>
-          <li>Develop AI-generated videos, characters, scenes and creative concepts.</li>
-          <li>Plan social content, write captions and support publishing workflows.</li>
-          <li>Create Reels and social creatives for multiple client accounts.</li>
-          <li>Use AI tools for scripts, SEO content, visual development and creative production.</li>
-          <li>Publish content using Meta Business Suite and support monthly reporting.</li>
-          <li>Upload blogs and website content using WordPress, cPanel and HTML.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="container">
-      <div class="section-number">06 — Education</div>
-
-      <h2 class="section-title">A <em>creative career</em> built on analytical thinking.</h2>
-
-      <div class="education-card">
-        <h3>BSc Mathematics</h3>
-        <p>Marwadi University · 2021</p>
-        <p>
-          A mathematics background that supports structured thinking,
-          problem solving and an analytical approach to creative work.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-number">07 — Contact</div>
-
-      <h2 class="section-title">
-        Have a project, role or <em>idea?</em>
-      </h2>
-
-      <div class="contact-grid">
-
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <p class="body-text">
-            I am open to opportunities in AI content creation,
-            prompt engineering, social media, digital marketing
-            and creative technology.
-          </p>
+          <div class="eyebrow">AI Content · Social Media · Creative Technology</div>
+          <h1>I turn ideas into content people can actually see.</h1>
+          <p class="hero-copy">I work across AI-generated video and visuals, social media, prompt engineering, SEO content and digital publishing — combining creative thinking with practical execution.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View selected work</a>
+            <a class="button" href="#contact">Let's talk</a>
+          </div>
+        </div>
+        <aside class="hero-note">
+          <strong>What I do best</strong>
+          Take a concept, build the creative system around it, produce the assets, publish them and measure what happened.
+        </aside>
+      </div>
+    </section>
 
-          <!-- Replace the email below with your preferred email address. -->
-          <a class="contact-link" href="mailto:your-email@example.com">
-            your-email@example.com
-          </a>
-
-          <br>
-
-          <a class="contact-link" href="https://github.com/jaytamkhane/Jay_portfolio" target="_blank" rel="noopener">
-            GitHub →
-          </a>
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">01 / About</div>
+          <div>
+            <h2 class="section-title">Creative work with an execution mindset.</h2>
+            <p class="section-intro">My work sits between social media, content production and AI-assisted creative workflows.</p>
+          </div>
         </div>
 
-        <form class="contact-form" onsubmit="sendEmail(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required>
-            </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I create social-first content, AI-generated videos and visual concepts, while also handling the operational side of content: planning, publishing, website updates and reporting.</p>
+            <p>I am especially interested in using AI as a production tool — not as a replacement for creative thinking. The goal is simple: make better content, faster, without making it feel generic.</p>
+          </div>
+          <dl class="facts">
+            <div class="fact"><dt>Focus</dt><dd>AI Content & Social Media</dd></div>
+            <div class="fact"><dt>Strengths</dt><dd>Video · Visuals · Prompts · Content</dd></div>
+            <div class="fact"><dt>Publishing</dt><dd>Meta Business Suite & Web</dd></div>
+            <div class="fact"><dt>Reporting</dt><dd>Social & Google Analytics</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">02 / Capabilities</div>
+          <div>
+            <h2 class="section-title">Useful skills, not a list of buzzwords.</h2>
+            <p class="section-intro">The strongest part of my profile is the ability to move from idea to finished digital asset without losing the practical details.</p>
+          </div>
+        </div>
+
+        <div class="capabilities">
+          <article class="capability"><div class="capability-no">01</div><h3>AI Video & Visual Content</h3><p>Build AI-assisted visual concepts, storyboards, image prompts, motion prompts and short-form videos for social platforms.</p></article>
+          <article class="capability"><div class="capability-no">02</div><h3>Social Media</h3><p>Plan content, create Reels and creatives, publish across platforms and maintain a consistent content workflow for clients.</p></article>
+          <article class="capability"><div class="capability-no">03</div><h3>Prompt Engineering</h3><p>Write structured prompts for image generation, character consistency, visual storytelling and AI video production.</p></article>
+          <article class="capability"><div class="capability-no">04</div><h3>SEO & Website Content</h3><p>Write SEO-focused content with AI assistance and publish blogs through WordPress, cPanel and HTML workflows.</p></article>
+          <article class="capability"><div class="capability-no">05</div><h3>Analytics & Reporting</h3><p>Collect social and website performance data and turn it into clear monthly reports and useful observations.</p></article>
+          <article class="capability"><div class="capability-no">06</div><h3>Client Coordination</h3><p>Coordinate content requirements, publishing needs and delivery across multiple client accounts.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">03 / Selected work</div>
+          <div>
+            <h2 class="section-title">A mix of creative production and real workflow.</h2>
+            <p class="section-intro">Selected areas from my day-to-day work rather than made-up case-study numbers.</p>
+          </div>
+        </div>
+
+        <div class="work-list">
+          <article class="work-item">
+            <div class="work-number">01</div>
+            <div><h3 class="work-title">Aster WalkAgain</h3><div class="work-type">Healthcare Social Media</div><div class="work-meta">Oman · Content planning · Reels · Awareness content</div></div>
+            <p class="work-desc">Social content built around rehabilitation problems and solutions, with disease education, rehab tips, technology-led content, awareness Reels and doctor-focused topics.</p>
+          </article>
+          <article class="work-item">
+            <div class="work-number">02</div>
+            <div><h3 class="work-title">AI Character Storytelling</h3><div class="work-type">AI Video Production</div><div class="work-meta">Character design · Image prompts · Motion</div></div>
+            <p class="work-desc">Created repeatable character descriptions and scene prompts for cinematic AI storytelling, with attention to visual continuity across shots.</p>
+          </article>
+          <article class="work-item">
+            <div class="work-number">03</div>
+            <div><h3 class="work-title">Short-form Content System</h3><div class="work-type">Social Content</div><div class="work-meta">Scripts · Visuals · Voice · Publishing</div></div>
+            <p class="work-desc">A practical workflow from script and visual planning through AI generation, voiceover, editing and final publishing for social platforms.</p>
+          </article>
+          <article class="work-item">
+            <div class="work-number">04</div>
+            <div><h3 class="work-title">SEO & Web Publishing</h3><div class="work-type">Content Operations</div><div class="work-meta">SEO writing · WordPress · cPanel · HTML</div></div>
+            <p class="work-desc">Produced SEO content with AI assistance and handled the final website publishing workflow instead of stopping at the writing stage.</p>
+          </article>
+          <article class="work-item">
+            <div class="work-number">05</div>
+            <div><h3 class="work-title">Monthly Analytics Reports</h3><div class="work-type">Reporting</div><div class="work-meta">Instagram · Facebook · LinkedIn · YouTube · GA</div></div>
+            <p class="work-desc">Collected platform performance data and assembled monthly client reports with clear summaries of content and channel performance.</p>
+          </article>
+          <article class="work-item">
+            <div class="work-number">06</div>
+            <div><h3 class="work-title">Prompt-led Creative Experiments</h3><div class="work-type">Creative Technology</div><div class="work-meta">Generative AI · Visual concepts · Storyboards</div></div>
+            <p class="work-desc">Experimented with cinematic, character-led and culturally themed AI content to understand what can be produced reliably with modern generative tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">04 / Toolkit</div>
+          <div><h2 class="section-title">Tools I use to get the work out.</h2></div>
+        </div>
+        <div class="tools">
+          <div class="tool"><strong>ChatGPT</strong><span>Prompts · Scripts · Content</span></div>
+          <div class="tool"><strong>Claude</strong><span>Writing · Analysis</span></div>
+          <div class="tool"><strong>Flow</strong><span>AI Video · Storyboards</span></div>
+          <div class="tool"><strong>Freepik</strong><span>AI Visuals · Creative Assets</span></div>
+          <div class="tool"><strong>ElevenLabs</strong><span>AI Voiceover</span></div>
+          <div class="tool"><strong>Meta Business Suite</strong><span>Publishing · Management</span></div>
+          <div class="tool"><strong>Google Analytics</strong><span>Website Reporting</span></div>
+          <div class="tool"><strong>WordPress</strong><span>Website Publishing</span></div>
+          <div class="tool"><strong>cPanel</strong><span>Web Content Uploads</span></div>
+          <div class="tool"><strong>Canva</strong><span>Social Creatives</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">05 / Process</div>
+          <div><h2 class="section-title">From a rough idea to something publishable.</h2></div>
+        </div>
+        <div class="process">
+          <div class="process-step"><div class="num">01</div><h3>Brief</h3><p>Understand the audience, problem, platform and objective.</p></div>
+          <div class="process-step"><div class="num">02</div><h3>Concept</h3><p>Turn the idea into a clear hook, script or visual direction.</p></div>
+          <div class="process-step"><div class="num">03</div><h3>Generate</h3><p>Build images, characters, motion and voice with AI-assisted tools.</p></div>
+          <div class="process-step"><div class="num">04</div><h3>Publish</h3><p>Prepare the final asset, caption and platform-specific publishing.</p></div>
+          <div class="process-step"><div class="num">05</div><h3>Review</h3><p>Read the performance data and use it to improve the next cycle.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-index">06 / Experience</div>
+          <div><h2 class="section-title">Where I have applied it.</h2></div>
+        </div>
+
+        <div class="experience-grid">
+          <div>
+            <article class="timeline-item">
+              <div class="timeline-date">Jan 2026 — Present</div>
+              <h3>The Mark</h3>
+              <div class="timeline-role">AI Prompt Engineer · Social Media & Content</div>
+              <ul class="timeline-list">
+                <li>Create AI image and video prompts for client content.</li>
+                <li>Plan and publish social media content across major platforms.</li>
+                <li>Create Reels, social creatives and AI-generated videos.</li>
+                <li>Support SEO writing, website uploads and monthly analytics reporting.</li>
+                <li>Work across multiple client accounts and content requirements.</li>
+              </ul>
+            </article>
+          </div>
+          <div>
+            <div class="education">
+              <div class="education-label">Education</div>
+              <h3>BSc Mathematics</h3>
+              <p>Marwadi University · 2021</p>
+            </div>
+            <div class="education">
+              <div class="education-label">Working style</div>
+              <h3>Creative + practical</h3>
+              <p>I care about the idea, but I also care about whether the final asset actually gets published and used.</p>
             </div>
           </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about the opportunity or project..." required></textarea>
-          </div>
-
-          <button class="submit-button" type="submit">Send Message →</button>
-        </form>
-
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Jay. AI Content · Social Media · Creative Technology.</div>
-
-      <div class="footer-links">
-        <a href="#top">Back to top ↑</a>
-        <a href="https://github.com/jaytamkhane/Jay_portfolio" target="_blank" rel="noopener">GitHub</a>
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">07 / Contact</div>
+          <h2 class="contact-title">Have a project that needs a creative operator?</h2>
+          <p class="contact-copy">I'm open to opportunities in AI content, social media, digital content and creative technology.</p>
+          <div class="hero-actions"><a class="button primary" href="https://github.com/jaytamkhane" target="_blank" rel="noopener">View GitHub</a></div>
+        </div>
+        <div class="contact-side">
+          <div class="contact-row"><span>Location</span><strong>Ahmedabad, India</strong></div>
+          <div class="contact-row"><span>Focus</span><strong>AI Content & Social Media</strong></div>
+          <div class="contact-row"><span>GitHub</span><a href="https://github.com/jaytamkhane" target="_blank" rel="noopener">@jaytamkhane ↗</a></div>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Jay Tamkhane</span>
+      <span>AI Content · Social Media · Creative Technology</span>
     </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function sendEmail(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    const subject = encodeURIComponent("Portfolio Contact from " + name);
-    const body = encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n\n" +
-      message
-    );
-
-    window.location.href =
-      "mailto:your-email@example.com?subject=" + subject + "&body=" + body;
-  }
-</script>
-
+  </footer>
 </body>
 </html>
